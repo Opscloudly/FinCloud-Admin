@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  web:
+    image: ethisglobal/ethis_turkey_admin:7
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3100:3100"
+    environment:
+      NODE_ENV: development
+ ID to avoid permission issues group

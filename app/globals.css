@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body,
+main,
+footer,
+header {
+  color: rgb(var(--foreground-rgb));
+  background: #ffffff;
+}
+
+input,
+textarea,
+select {
+  @apply dark:bg-white dark:text-Gray-input dark:focus:border-main-600 dark:outline-none dark:border-Gray-200;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.menu-item:active,
+.menu-item:hover,
+.menu-item:focus,
+.menu-sub-item:active,
+.menu-sub-item:focus {
+  background-color: #c7fff6 !important;
+  color: #0a6563 !important;
+}
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+/* Table style */
+tbody > tr {
+  @apply odd:bg-Gray-50 even:bg-white;
+}
+.table-head-cell {
+  @apply px-6 py-4 text-Gray-600 text-left text-xs font-medium leading-[18px] border-Gray-200 bg-white;
+}
+.table-cell {
+  @apply px-6 py-6 text-Gray-900 text-sm font-medium;
+}
+
+.pagination-link {
+  @apply flex justify-center items-center h-10 w-10 text-Gray-500 text-sm font-medium rounded-lg hover:bg-main-50 hover:text-main-700 transition-all duration-150;
+}
+
+.stick-to-top {
+  @apply sticky top-0 z-50 py-6 bg-white;
+}
+
+.custom-checkbox {
+  @apply w-[18px] h-[18px] cursor-pointer rounded accent-main-600;
+}
+
+.general-notification {
+  @apply fixed top-2 w-full max-w-[450px] text-sm animate-moveDown;
+  left: calc(50% - 225px);
+  z-index: 99999;
+}
