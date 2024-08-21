@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.HOST_USERNAME }}
           password: ${{ secrets.PASSWORD }}
           source: "./"
-          target: ./test-setup/ethis_turkey_admin
+          target: ./ethis_turkey_admin
       - name: Execute Script on Server
         uses: appleboy/ssh-action@v0.1.7
         with:
